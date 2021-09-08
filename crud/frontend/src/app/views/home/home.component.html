@@ -1,6 +1,10 @@
-<mat-card>
+<mat-card class="home mat-elev ation-z3">
   <mat-card-title class="title"> Bem Vindo! </mat-card-title>
   <mat-card-subtitle>
     Sistema para exemplificar a construção de um cadastro em Angular
   </mat-card-subtitle>
+
+  <ul>
+    <li *myFor="let n; em: [1, 2, 3]">{{ n }}</li>
+  </ul>
 </mat-card>
