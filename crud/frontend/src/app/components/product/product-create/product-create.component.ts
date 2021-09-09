@@ -9,7 +9,7 @@ import { Product } from '../product.model';
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent implements OnInit {
-  product: any = {
+  product: Product = {
     name: '',
     price: null
   };
