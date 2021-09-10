@@ -17,18 +17,13 @@
     },
     {
       "name": "Produto Qualquer",
-      "price": "1.99",
+      "price": "1700",
       "id": 4
     },
     {
       "name": "Geladeira",
-      "price": "1700",
+      "price": "2800",
       "id": 5
-    },
-    {
-      "name": "Lapis Preto",
-      "price": "2.50",
-      "id": 6
     }
   ]
 }

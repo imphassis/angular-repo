@@ -1,6 +1,7 @@
 import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-read',
@@ -10,7 +11,7 @@ import { Product } from '../product.model';
 export class ProductReadComponent implements OnInit {
   products: Product[] | any;
 
-  displayedColumns = ['id', 'name', 'price'];
+  displayedColumns = ['id', 'name', 'price', 'actions'];
 
   constructor(private productService: ProductService) {}
 
@@ -18,5 +19,16 @@ export class ProductReadComponent implements OnInit {
     this.productService.read().subscribe(products => {
       this.products = products;
     });
+  }
+
+  deleteProduct(product: any) {
+    this.productService.delete(product).subscribe(() => {
+      this.productService.showMessage('Produto excluído com sucesso!');
+      window.location.reload();
+    });
+  }
+
+  modifyRow(row: any) {
+    console.log(row);
   }
 }
