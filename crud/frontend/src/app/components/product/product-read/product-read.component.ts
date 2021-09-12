@@ -21,14 +21,10 @@ export class ProductReadComponent implements OnInit {
     });
   }
 
-  deleteProduct(product: any) {
-    this.productService.delete(product).subscribe(() => {
+  deleteProduct(id: string): void {
+    this.productService.delete(id).subscribe(() => {
       this.productService.showMessage('Produto excluído com sucesso!');
       window.location.reload();
     });
-  }
-
-  modifyRow(row: any) {
-    console.log(row);
   }
 }

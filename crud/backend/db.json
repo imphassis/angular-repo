@@ -8,7 +8,7 @@
     {
       "id": 2,
       "name": "Notebook Mac",
-      "price": 12000
+      "price": "13000"
     },
     {
       "id": 3,
@@ -17,12 +17,12 @@
     },
     {
       "name": "Produto Qualquer",
-      "price": "1700",
+      "price": "3444",
       "id": 4
     },
     {
-      "name": "Geladeira",
-      "price": "2800",
+      "name": "Freezer",
+      "price": "1500",
       "id": 5
     }
   ]

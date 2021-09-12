@@ -12,7 +12,6 @@ import * as _ from 'lodash';
 })
 export class ProductModifyComponent implements OnInit {
   product: Product | any;
-  routeId: any;
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -20,17 +19,20 @@ export class ProductModifyComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.routeId = params;
-    });
-    this.productService.read().subscribe(data => {
-      this.product = data.find(el => el.id === Number(this.routeId.id));
+    const id = this.route.snapshot.paramMap.get('id');
+    this.productService.readById(id).subscribe(data => {
+      this.product = data;
     });
   }
 
-  updateProduct(product: Product) {
-    this.productService.update(product).subscribe(() => {
+  updateProduct(): void {
+    this.productService.update(this.product).subscribe(() => {
+      this.productService.showMessage('Produto atualizado com sucesso!');
       this.router.navigate(['/products']);
     });
+  }
+
+  cancel() {
+    this.router.navigate(['/products']);
   }
 }

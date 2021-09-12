@@ -17,3 +17,13 @@ body {
   vertical-align: middle;
   margin: 5px;
 }
+
+.msg-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.msg-error {
+  background-color: #e35e6b;
+  color: white;
+}
